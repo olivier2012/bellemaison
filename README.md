@@ -4,7 +4,7 @@ bellemaison project <br>
   <hr/>
              for Front-end :     HTML5  CSS  javascript and Jquery ,  angularjs  <br/>
             
-             for Back-end :      Java , oracle(maridb) , log4j2 , maven , Jdbc,DAO  <br/>
+             for Back-end :      Java , oracle(maridb) , log4j2 , maven , Jdbc,DAO  
              
   <hr/>           
              
