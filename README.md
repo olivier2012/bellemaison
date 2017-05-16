@@ -11,14 +11,14 @@ bellemaison project <br>
   
 
 Task：
-<ol>
+<ul>
 <li>10,log4j2 应用成功 
 <li>20，maven  应用 
 <li>30，多table 关联查询 
 <li>40，展示结果 jsp
 <li>50，多html 页面 与 数据库 操作 结合
-<ol/> 
-
+<ul/> 
+<hr/>
 note: 
 1, 根据这篇文章 apache 上 log4j 配置文件 要位于/web-inf 目录下 
     文件名称 可以使  log4j 开头的 log4j-name     https://logging.apache.org/log4j/2.x/manual/webapp.
