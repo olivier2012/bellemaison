@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="utf-8" >
+        <title>BelleMaison --- by Olivier Su </title>
+       <link rel="stylesheet" href="./css/main.css"> 
+                <script
+			  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+			  integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+			  crossorigin="anonymous"></script>
+          <script>
+            function enlargeImage(){
+                   window.open('newwindow.html','newwin','width=425,height=525')
+                  }
+       </script>
+ <!--          <script src="rollover_library.js"></script>
+          <script src="rollover_library.js"></script>
+          <script src="slide_show_library.js"></script>
+          <script src="slide_show.js"></script>
+          <script>  
+            var $=function(id){
+                return document.getElementById(id);
+            }
+            var rollover;
+                window.onload = function() {
+                    rollover1 = new Rollover("image1" ,"house.jpg");
+                    rollover2 = new Rollover("image1" ,"maison.jpg");
+                    rollover3 = new Rollover("image1" ,"apparement.jpg");                    
+                }
+          </script>   -->
+    </head>
+    <body onload="changebigpic('./res/pic/house_1.jpg','house_1.jpg' )">
+      <header>
+        <blockquote class="blackquote_top">
+<!--        <a name="top-tag" />
+        <a href="#middle-tag"> Go to Middle </a> 
+        <a href="#bottom-tag"> Go to Bottom </a>  -->
+        </blockquote>  
+<!-- /*参考了 http://inscriptionsaquadome.ca/en/*/ --> 
+    <div class="wrapper super" >   
+        <div id="side_menu" >
+          <a href="/">
+              <img  src="" alt="side menu" title="side menu">
+          </a>  
+        </div> 
+        <nav id="main_menu">
+        <ul >  
+             <li ><a  href="./index.html" accesskey="c" tabindex="0">HOME  </a></li>
+             <li ><a href="./infosclients.html" target="_blank">infosclient</a></li>
+		     <li ><a href="./typeofpropertie.html">Propertie </a></li>
+		     <li><a href="./loancalucate.html">LoanCalucate</a></li>		  
+		</ul>
+        </nav> 
+    </div>
+          <br>
+                    <br>
+                    <br>
+                    <br>
+          <span>
+
+          </span>
+
+          <div>     </div>
+         <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; H1 title position  in the body and header</h1>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; h1 content position  </p>
+     <blockquote>
+     <a href="#top-tag"> Back to Top </a> 
+     <a href="#bottom-tag"> Go to Bottom </a> 
+    </blockquote>
+      </header>
+        
+    <div id="middle">  
+        <a name="middle-tag" /> </a>
+      <aside id="side_left"><h1></h1>
+        <script>
+              var today = new Date();
+              document.writeln("Current data : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp  " )
+              document.writeln(today.toDateString()) 
+        </script>
+      </aside>
+        
+      <section id="page_center"><h1></h1><br>
+
+         <ul id="tablist" role="tablist" class="tablist">
+              <li id="tab1" class="tab" role="tab" aria-controls="panel1" aria-selected="true"  tabindex="0">House</a></li>
+              <li id="tab2" class="tab" role="tab" aria-controls="panel2" aria-selected="false" tabindex="1">TownHome</a></li>
+              <li id="tab3"class="tab" role="tab"  aria-controls="panel3" aria-selected="false" tabindex="2">Duplex</a></li>
+              <li id="tab4"class="tab" role="tab"  aria-controls="panel4" aria-selected="false" tabindex="3">Condos</a></li>
+          </ul> 
+          <div id="panel1" class="panel" role="tabpanel" aria-labelledby="tab1" aria-hidden="false">
+              <h3 tabindex="0"> House</h3>
+              <table border=1x;>
+                  <tr>
+                      <th>
+                          
+                      </th>
+                  </tr>
+                  <tr>
+                     <td>    
+                         <div id="img_thumbnail">
+                            <a href="./res/pic/house_1.jpg" onmouseover="changebigpic('./res/pic/house_1.jpg','house_1.jpg' )">
+                             <img src="./res/pic/house_1.jpg" alt="house" style="width:150px" /></a>
+                         </div>  
+                      </td>
+                     <td>    
+                         <div id="img_thumbnail">
+                            <a href="./res/pic/house_2.jpg" onmouseover="changebigpic('./res/pic/house_2.jpg','house_2.jpg' )">
+                             <img src="./res/pic/house_2.jpg" alt="house" style="width:150px" /></a>
+                         </div>  
+                      </td>
+                    <td>    
+                         <div id="img_thumbnail">
+                            <a href="./res/pic/house_3.jpg" onmouseover="changebigpic('./res/pic/house_3.jpg','house_3.jpg' )">
+                             <img src="./res/pic/house_3.jpg" alt="house" style="width:150px" /></a>
+                         </div> 
+                      </td>
+                  </tr>
+              </table>
+              <table id="big_pic">
+              <div id="show_box_div" border=1px;>
+                <span id="show_box" > 
+                  </span>  
+                 
+              </div>
+              </table>      
+          </div>
+          
+         <div id="panel2" class="panel" role="tabpanel" aria-labelledby="tab2" aria-hidden="true">
+              <h3 tabindex="1"> TownHome</h3>
+              List of TownHome 
+          </div>
+          
+        <div id="panel3" class="panel" role="tabpanel" aria-labelledby="tab3" aria-hidden="true">
+              <h3 tabindex="2"> Duplex</h3>
+                            <table border=1x;>
+                  <tr>
+                      <th>
+                          table head
+                      </th>
+                  </tr>
+                  <tr>
+                     <td>    
+                         <div id="img_thumbnail">
+                            <a href="./res/pic/house_1.jpg" onmouseover="changebigpic('./res/pic/house_1.jpg','house_1.jpg' )">
+                             <img src="./res/pic/house_1.jpg" alt="house" style="width:150px" /></a>
+                         </div>  
+                      </td>
+                     <td>    
+                         <div id="img_thumbnail">
+                            <a href="./res/pic/house_2.jpg" onmouseover="changebigpic('./res/pic/house_2.jpg','house_2.jpg' )">
+                             <img src="./res/pic/house_2.jpg" alt="house" style="width:150px" /></a>
+                         </div>  
+                      </td>
+                    <td>    
+                         <div id="img_thumbnail">
+                            <a href="./res/pic/house_3.jpg" onmouseover="changebigpic('./res/pic/house_3.jpg','house_3.jpg' )">
+                             <img src="./res/pic/house_3.jpg" alt="house" style="width:150px" /></a>
+                         </div> 
+                      </td>
+                  </tr>
+              </table>
+              <table id="big_pic">
+              <div id="show_box_div" border=1px >
+                <span id="show_box" >
+                  </span>  
+                 
+              </div>
+              </table>    
+          </div>
+          
+        <div id="panel4" class="panel" role="tabpanel" aria-labelledby="tab4" aria-hidden="true">
+              <h3 tabindex="3"> Condos</h3>
+              List of Condos
+          </div>
+      </section>
+       
+       <aside id="side_right"><h1></h1>
+
+       </aside> 
+     </div>     
+     <footer id="footer"><h1>Footer </h1>
+      <blockquote>
+     <a name="bottom-tag" />
+     <a href="#top-tag"> Back to Top </a> 
+     <a href="#middle-tag"> Back to Middle </a>  
+     </blockquote>          
+     <address>2605 Des Trinitaires Montreal ,QC , Canada  H4E2R7 </address>     
+     <p id="copyright">&copy COPYRIGHT : author Olivier 2017-2020 </p>
+    </footer>
+
+    </body>
+    <script src="./js/typeofpropertie.js"></script>
+</html>

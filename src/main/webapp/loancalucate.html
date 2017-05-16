@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="utf-8" >
+        <title>BelleMaison --- by Olivier Su </title>
+       <link rel="stylesheet" href="./css/main.css">  
+    </head>
+    <body>
+      <header>
+        <blockquote class="blackquote_top">
+<!--        <a name="top-tag" />
+        <a href="#middle-tag"> Go to Middle </a> 
+        <a href="#bottom-tag"> Go to Bottom </a>  -->
+        </blockquote>  
+<!-- /*参考了 http://inscriptionsaquadome.ca/en/*/ --> 
+    <div class="wrapper super" >   
+        <div id="side_menu" >
+          <a href="/">
+              <img  src="" alt="side menu" title="side menu">
+          </a>  
+        </div> 
+        <nav id="main_menu">
+        <ul >  
+             <li ><a  href="./index.html" accesskey="c" tabindex="0">HOME  </a></li>
+             <li ><a href="./infosclients.html" target="_blank">infosclient</a></li>
+		     <li ><a href="./typeofpropertie.html">Propertie </a></li>
+		     <li><a href="./loancalucate.html">LoanCalucate</a></li>		  
+		</ul>
+        </nav> 
+    </div>
+          <br>
+                    <br>
+                    <br>
+                    <br>
+          <span>
+
+          </span>
+
+          <div>     </div>
+         <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; H1 title position  in the body and header</h1>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; h1 content position  </p>
+     <blockquote>
+     <a href="#top-tag"> Back to Top </a> 
+     <a href="#bottom-tag"> Go to Bottom </a> 
+    </blockquote>
+      </header>
+    <div id="middle">  
+        <a name="middle-tag" /> </a>
+      <aside id="side_left"><h1></h1>
+        <script>
+              var today = new Date();
+              document.writeln("Current data : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp  " )
+              document.writeln(today.toDateString()) 
+        </script>
+      </aside>
+        
+      <section id="page_center"><h1></h1><br>
+          <h1> Laon Calulate </h1><br>
+          
+           <table>
+              <tr>
+                  <td><label> Loan Mount : </label></td>
+                  <td><input id="loanmount" type="text" value=""/> <span></span></td>
+               </tr>
+              <tr>
+                  <td><label> Loan Term : </label></td>
+                  <td><input id="loanterm" type="text" value="" /><span>Years</span> </td>
+             </tr>
+             <tr>
+                  <td><label> Interest Rae : </label></td>
+                  <td><input id="interestrate" type="text" value=""/> <span>Years</span> </td>
+             </tr>  
+             <tr>
+                 <td><button onclick="calculate()"> Calculate </button></td>
+                  <td><span id="result"></span></td>
+             </tr> 
+             <tr>
+                 <td><button onclick="reset()"> Reset </button></td>
+             </tr>  
+          </table>
+  
+      </section>
+       
+       <aside id="side_right"><h1></h1>
+
+       </aside> 
+     </div>     
+     <footer id="footer"><h1>Footer </h1>
+      <blockquote>
+     <a name="bottom-tag" />
+     <a href="#top-tag"> Back to Top </a> 
+     <a href="#middle-tag"> Back to Middle </a>  
+     </blockquote>          
+     <address>2605 Des Trinitaires Montreal ,QC , Canada  H4E2R7 </address>     
+     <p id="copyright">&copy COPYRIGHT : author Olivier 2017-2020 </p>
+    </footer>
+
+    </body>
+     <script src="./js/loancalucate.js"> 
+     </script>
+
+</html>

@@ -1,0 +1,337 @@
+/*reset all of setting */
+/*HTML5   */
+
+* {margin:0;padding:0}
+
+/* for print css 
+@media print{
+   body{
+        width:100%;
+        height:950px; 
+        margin:15px auto;
+        border: 0px solid #ef9c00;
+        background: url("background.jpeg")  scroll center top;
+        position:relative;
+}
+}*/
+/* CSS for screen style sheet  */
+
+/*new add when  media queries */
+
+artcle,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{
+    display:block;
+    }
+audio,canvas,video{
+    display:inline-block;
+}
+
+/*new add when  media queries */
+/* .span block properties   */
+.span{
+    background:#000;
+    height:20px;
+}
+
+
+/*MEDIA QUERIES Responsive*/
+
+ @media screen and (min-width:768px){
+     .span{
+    background:#111;
+    height:20px;
+}
+     #featured li {
+         width:46%;
+     }
+}
+
+ @media screen and (min-width:980px){
+     .span{
+    background:#222;
+    height:20px;
+}
+     #featured li {
+         width:60%;
+     }
+}
+
+ @media screen and (min-width:1200px){
+     .span{
+    background:#333;
+    height:20px;
+}
+     #featured li {
+         width:92%;
+     }
+}
+/* @media (max-width:768px){
+      .span{
+    background:#444;
+    height:20px;
+}
+     #featured li {
+         width:46%;
+     }
+}
+
+ @media (max-width:480px){
+     .span{
+    background:#555;
+    height:20px;
+}
+     #featured li {
+         width:60%;
+     }
+}
+
+ @media screen and (max-width:320px){
+     .span{
+    background:#666;
+    height:20px;
+}
+     #featured li {
+         width:92%;
+     }
+}
+*/
+section,aside,h1,h2 {
+    margin: 0 ;
+    padding:0;
+}
+
+section , aside{
+    margin-top:1.5em;
+    margin-bottom:1em;
+}
+
+.wrapper.super{
+    z-index:9001;
+    
+}
+
+.wrapper {
+    width:100%;
+    margin: 0 auto;
+    position:fixed;
+}
+/* for two menus setting  */ 
+#side_menu {
+    position:fixed;top:0px;
+}
+#side_menu img{
+    width: 150px; 
+}
+/*two menus imline show */
+
+#main_menu{
+          text-align: right;
+}
+#main_menu ul{
+    list-style:none;
+    margin-left: 1.2em;
+    margin-bottom: 1.5em;    
+}
+
+
+#main_menu ul li {
+     display: inline;
+     width:200px;
+     margin: .5em;
+     padding: 0.25em;
+     background-color:blueviolet;
+     font-display:block;
+     }
+
+#main_menu ul li a {
+     padding: 0.25em 0 .25em .5em;
+     text-decoration: none;
+     color:greenyellow;
+     }
+
+#main_menu a.current {
+    background-color: silver;
+}
+p,ol,td,th {
+    font-size:14px;
+    line-height:1.3;
+    padding-bottom:10px;
+    font-family:'Noto sans',sans-serif;
+    
+}
+body{
+  width:100%;
+  height:950px; 
+  margin:15px auto;
+  border: 0px solid #ef9c00;
+  background: url("../res/background.jpeg")  scroll center top;
+  position:relative;
+}
+aside {
+    position:relative;
+}
+
+header{
+  width:100%;
+  height:460px;
+  background-image:url("../res/header.jpg") ;    
+}
+
+#side_left {
+    width:180px;
+    height:700px;
+    float: left;
+    border-right:2px solid #ef9c00
+}
+
+#page_center{
+    width: 340px;
+    float: left;
+    margin:1em;
+}
+
+#myslides {
+   width:320px;
+   height:auto;
+   margin:0.5em;
+}
+
+#side_right{
+    width:180px;
+    height: 700px;
+    float:right;
+    border-left:2px solid #ef9c00;
+    padding-left:2em;
+    padding-top:0em;
+        
+}
+textarea {
+    height:5em;
+    width:25em;
+    font-family: sans-serif ,Helvetica ;
+}
+footer{
+  clear:both; 
+  height:150px;    
+        
+}
+
+p#copyright {
+    font-size:3px ;
+    text-align:right;
+}
+
+blockquote {
+    text-align-last:inherit;
+}
+h1 { font-size:125%}
+
+/* infosclient  special control */
+form {
+    width: 50em;
+}
+
+form p {
+    color:navy;
+    width: 10em;
+    font-weight:bold;
+    text-align:left;
+}
+form input{
+   width:15em;
+   margin-left: 5em;
+   margin-bottom: .5em;    
+}
+
+form input:focus{
+    border:2px solid navy;
+}
+
+lable {
+    color:navy;
+    width: 10em;
+    font-weight:bold;
+    text-align:left;
+}
+
+p#controls {
+    display:inline;
+}
+
+
+/* for tab bar css*/
+
+ul.tablist {
+    position:relative;
+     margin:0;
+     padding:6px 12px;
+     border-bottom: 2px solid black; 
+     width:20em;
+     height:31px;
+     font-size:1.5em;
+}
+
+ul.tablist li {
+    border:grey solid 1px;
+    border-bottom:none;
+    float : left;
+   list-style: none;
+    display: inline;
+    margin:7px 10px auto 10px;
+}
+
+
+ul.tablist li a {
+   color:aquamarine;
+    font-weight:bold;
+    text-decoration: none;
+    border-top-left-radius: 3em;
+}
+
+ul.tablist.tablist li a:hover {
+    background:silver;
+    border-color:black;
+}
+
+ul.tablist  li.active {
+    background:gray;
+ }
+
+ul.tablist  li.active a {
+    color: white;
+    border-color: aquamarine;
+
+ }
+
+
+li[aria-selected='true']{
+    color:black;
+    border-bottom:1px solid white;
+    background-color: white;
+    border-bottom: 1px solid white;
+}
+
+div [aria-hidden="true"]{
+    display:none;
+}
+
+.hidden {display:none; }
+
+#img_thumbnail {
+      border: 1px;
+      border-radius: 4px;
+      padding :5px;
+      width:150px;
+    }
+#img_thumbnail:hover {
+    box-shadow: 0 0 2px 1 px rgba(0,140,186,0.5);
+}
+
+#show_box_div {
+    width:588px;
+    height:388px;
+    border: 1px solid blue ; 
+    padding:1px;
+}
+
+
+/**/
