@@ -1,8 +1,12 @@
 # bellemaison
-bellemaison project 
-  I used the : 
-             for Front-end :     HTML5  CSS  javascript and Jquery ,  angularjs 
-             for Back-end :      Java , oracle(maridb) , log4j2 , maven , Jdbc,DAO 
+bellemaison project <br> 
+  I used the : <br>
+  <hr/>
+             for Front-end :     HTML5  CSS  javascript and Jquery ,  angularjs  <br/>
+            
+             for Back-end :      Java , oracle(maridb) , log4j2 , maven , Jdbc,DAO  <br/>
+             
+  <hr/>           
              
   
 
