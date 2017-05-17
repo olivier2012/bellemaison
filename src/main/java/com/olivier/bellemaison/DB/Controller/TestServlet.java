@@ -90,6 +90,7 @@ public class TestServlet extends HttpServlet {
             }
             else {
                 InitDB.Action((com.mysql.jdbc.Connection) CurConn,DB);
+                 CurConn = (Connection) InitConnect.Connect(DB);
             }
             boolean ex_t = InitConnect.checkTableExist("student", DB);
             log.info("4,check the table ..... " + ex_t);
@@ -99,8 +100,6 @@ public class TestServlet extends HttpServlet {
                 t_stu.setTabl("student");
                 t_stu.setCrea_sql(sts.cre_sql);
                 t_stu.create();  
-             
-               /*  studentdi.create();*/
                 log.info("4.8,  created the table!!");
             }
 
