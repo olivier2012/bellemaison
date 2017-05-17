@@ -46,6 +46,7 @@ public class StudentDaoImp implements DAO {
           	    
 	String create_sql ;
                create_sql ="create table student ("
+                       + "student_id int, "
                        + "register_date date, "
                        + " First_name varchar(40),Last_name varchar(40),"
                        +"Email varchar(60),phone_number varchar(20),"  
@@ -61,11 +62,12 @@ public class StudentDaoImp implements DAO {
 
 
 	public void insert(Student st) throws SQLException, Exception {
-		String insert_sql="insert into student (First_name,Last_name,Course_id) values(?,?,?) " ;
+		String insert_sql="insert into student (First_name,Last_name,Course_id) values(?,?,?,?) " ;
                try (PreparedStatement preparedStatement = (PreparedStatement) InitConnect.Connect(DBname).prepareStatement(insert_sql)) {
                    preparedStatement.setString(1,st.getFirst_name());
                    preparedStatement.setString(2, st.getLast_name());
                    preparedStatement.setString(3, st.getCourse_id());
+                   preparedStatement.setInt(4, st.getStudent_id());
                    System.out.println("insert the values to student table : "+preparedStatement.toString());
                    preparedStatement.executeUpdate();
                    log.trace("Insert student table successful !");
@@ -120,9 +122,37 @@ public class StudentDaoImp implements DAO {
 			
 			statement.close();
 	}
- 
+//
+	public Student selectByID(String ID) throws SQLException {
+		String select_sql="select Student_id,First_name,Last_name,Course_id from  student where student_id ='"+ID+"';";
+		Statement statement = null;
+		try {
+			statement = (Statement) InitConnect.Connect(DBname).createStatement();
+		} catch (Exception e) {
+                    // TODO Auto-generated catch block
 
-	public void selectByID(String ID) throws SQLException {
+		}
+		log.trace(statement.toString());
+		ResultSet rs = statement.executeQuery(select_sql);
+                
+		//ResultSetMetaData rsmd = (ResultSetMetaData) rs.getMetaData();
+		/* note :  meta data access from 1  ........... not from 0 */
+		
+                Student s_temp = new Student();
+                s_temp.setStudent_id(rs.getInt("Student_id"));
+                s_temp.setFirst_name(rs.getString("First_name"));
+                s_temp.setLast_name(rs.getString("Last_name"));
+                s_temp.setCourse_id(rs.getString("Course_id"));
+                
+                return s_temp;
+	}        
+        
+        
+//
+        
+     
+ /*       
+	public void selectByID() throws SQLException {
 		String select_sql="select * from  student where student_id ='"+ID+"';";
 		Statement statement = null;
 		try {
@@ -134,7 +164,7 @@ public class StudentDaoImp implements DAO {
 		log.trace(statement.toString());
 		ResultSet rs = statement.executeQuery(select_sql);
 		ResultSetMetaData rsmd = (ResultSetMetaData) rs.getMetaData();
-		/* note :  meta data access from 1  ........... not from 0 */
+		/* note :  meta data access from 1  ........... not from 0 
 		log.trace("select  student table successful !");
         log.trace("-1-  rs value  " +"is afterlast  : "+ rs.isAfterLast()+"rs cursor position "+rs.isFirst());
         List <String> cname;
@@ -163,6 +193,7 @@ public class StudentDaoImp implements DAO {
 		
 		
 	}
+*/ 
 
 	public void update(String ID) {
 	      
