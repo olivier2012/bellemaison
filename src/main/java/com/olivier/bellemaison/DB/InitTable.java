@@ -49,14 +49,15 @@ public class InitTable {
    public  void create() throws SQLException, Exception {
           	    
                System.out.println("got the connect and new table,create through crea_sql  " + Conn +" "+ Tabl+" "+ Crea_sql);
-               try (Statement statement = (Statement) Conn.createStatement()) {
-                   System.out.println("Conn and create table ");
+               try (Statement statement = Conn.createStatement()) {
+                   log.info("Conn and create table ");
     
-                   System.out.println(this.Crea_sql);
-                   statement.executeUpdate(this.Crea_sql);
-                   statement.execute(this.Crea_sql);
+                   // create table 
+                   //statement.executeUpdate(this.Crea_sql);
+                   
+                   statement.execute(getCrea_sql());
                    log.info("Create student table successful !");
-                   System.out.println("Create student table successful !");
+       
                }
 	    } 
 }

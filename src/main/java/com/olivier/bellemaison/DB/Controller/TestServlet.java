@@ -57,14 +57,14 @@ public class TestServlet extends HttpServlet {
 
         //connect DB check database
         Connection CurConn = null;
-        log.info("main begin.........! ");
+        log.info("1,main begin.........! ");
         String DB;
         try {
             // setting  DATABASE name 
             DB = "student";
             // inital the connection 
             CurConn = (Connection) InitConnect.Connect();
-            log.info("connection the database ... ");
+            log.info("2, connection the database ... ");
            // check the database is exist , if not create 
             
             boolean isexist = InitConnect.checkDBExist(DB);
@@ -84,24 +84,24 @@ public class TestServlet extends HttpServlet {
                while(iterator.hasNext()){ 
                }
                }*/
-            System.out.println("check the database .....");
-            log.info("database exist " + isexist);
-            if (!isexist) {
+            log.info("3, check the database ....." + "database exist " + isexist);
+            if (isexist){
+                 CurConn = (Connection) InitConnect.Connect(DB);
+            }
+            else {
                 InitDB.Action((com.mysql.jdbc.Connection) CurConn,DB);
             }
-            System.out.println("check the table ..... ");
             boolean ex_t = InitConnect.checkTableExist("student", DB);
-            System.out.println("check the table ..... " + ex_t);
+            log.info("4,check the table ..... " + ex_t);
             if (!ex_t) {
-                System.out.println("ready to create the table ..... ");
-             /*   t_stu.setConn((com.mysql.jdbc.Connection) CurConn);
+                log.info(" 4.5, ready to create the table ..... ");
+               t_stu.setConn((com.mysql.jdbc.Connection) CurConn);
                 t_stu.setTabl("student");
                 t_stu.setCrea_sql(sts.cre_sql);
-                t_stu.create();  */
-                
-                
-                studentdi.create();
-                System.out.println("created the table!!");
+                t_stu.create();  
+             
+               /*  studentdi.create();*/
+                log.info("4.8,  created the table!!");
             }
 
             

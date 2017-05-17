@@ -20,7 +20,7 @@ public class InitConnect{
   
    public static Connection Connect() throws Exception {
 	Class.forName("com.mysql.jdbc.Driver");
-	String url ="root:mysql://localhost?useSSL=false";
+	String url ="jdbc:mysql://localhost?useSSL=false";
 	log.info("connecting Mysql DB.........! ");
         System.out.println("connecting Mysql DB.........! ");
 	   Connection conn= DriverManager.getConnection(url,"jdbc","jdbc");
