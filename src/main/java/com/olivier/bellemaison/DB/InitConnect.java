@@ -23,7 +23,7 @@ public class InitConnect{
 	String url ="root:mysql://localhost?useSSL=false";
 	log.info("connecting Mysql DB.........! ");
         System.out.println("connecting Mysql DB.........! ");
-	   Connection conn= DriverManager.getConnection(url,"root","x09seokw");
+	   Connection conn= DriverManager.getConnection(url,"jdbc","jdbc");
     log.info("connected Mysql DB! ");
 
 	 return  conn;
@@ -35,7 +35,7 @@ public class InitConnect{
 		log.trace("url :"+url);
 		log.info("connecting Mysql DB.........! ");
                 System.out.println("connecting Mysql DB ! ");
-		   Connection conn= DriverManager.getConnection(url,"root","x09seokw");
+		   Connection conn= DriverManager.getConnection(url,"jdbc","jdbc");
 	    log.info("connected Mysql DB! ");
 
 		 return  conn;
