@@ -12,6 +12,6 @@ public interface DAO {
 	 public void insert(Student s) throws SQLException, Exception;
          public void deleteByID(String ID) throws SQLException, Exception;
          public void select() throws SQLException;
-         public void selectByID(String ID) throws SQLException;
+         public Student selectByID(String ID) throws SQLException;
 	 public void update(String ID); 
 }

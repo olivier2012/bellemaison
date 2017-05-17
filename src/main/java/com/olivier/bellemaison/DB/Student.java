@@ -2,6 +2,7 @@ package com.olivier.bellemaison.DB;
 
 public class Student {
     public final String cre_sql= "create table student ("
+                       + "student_id int , "
                        + "register_date date, "
                        + " First_name varchar(40),Last_name varchar(40),"
                        +"Email varchar(60),phone_number varchar(20),"  
@@ -15,14 +16,14 @@ public class Student {
     private String Course_id;
     private String Mark_id;
 
-    public Student(String firstname, String lastname) {
-        this.First_name = firstname;
-        this.Last_name = lastname;
+    public Student() {
+       
     }
-        public Student(String firstname, String lastname,String course) {
+        public Student(int studentid,String firstname, String lastname,String course) {
         this.First_name = firstname;
         this.Last_name = lastname;
         this.Course_id = course;
+        this.Student_id = studentid;
     }
 	/**
 	 * @return the employee_id

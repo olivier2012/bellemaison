@@ -49,6 +49,7 @@ public class TestServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         globalCount ++;
+        int studentid = Integer.parseInt(request.getParameter("student_id")); 
         String firstname = request.getParameter("firstname");
         String lastname = request.getParameter("lastname");
         String course = request.getParameter("course");
@@ -63,7 +64,7 @@ public class TestServlet extends HttpServlet {
             DB = "student";
             // inital the connection 
             CurConn = (Connection) InitConnect.Connect();
-            
+            log.info("connection the database ... ");
            // check the database is exist , if not create 
             
             boolean isexist = InitConnect.checkDBExist(DB);
@@ -72,12 +73,12 @@ public class TestServlet extends HttpServlet {
             StudentDaoImp studentdi = new StudentDaoImp((com.mysql.jdbc.Connection) CurConn,DB);
             
             // create student object 
-            Student sts = new Student(firstname, lastname);
+            Student sts = new Student(studentid,firstname, lastname,course);
             
             InitTable t_stu = new InitTable();
-            Student sts1 = new Student("first",lastname,course);
+  /*          Student sts1 = new Student(studentid,firstname,lastname,course);
             request.setAttribute("setAttr", sts1);
-           /* if(request.getAttribute("setAttr")){
+           if(request.getAttribute("setAttr")){
                sts1.setLast_name("second");
                Iterator <String> iterator = sts1.iterator();
                while(iterator.hasNext()){ 
@@ -106,6 +107,15 @@ public class TestServlet extends HttpServlet {
             
             sts.setCourse_id(course);
             studentdi.insert(sts);
+            
+            
+            // get by ID
+            Student aa = new Student();
+            aa = studentdi.selectByID("01");
+            request.setAttribute("send_01", aa);
+            String url="/display_jsp.jsp";
+            getServletContext().getRequestDispatcher(url).forward(request,response);
+            
             log.info("got records from student ==============================");
             System.out.println("got records from student ==============================");
             studentdi.select();
