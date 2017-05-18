@@ -13,6 +13,16 @@
         <servlet-name>TestServlet</servlet-name>
         <url-pattern>/ppp</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>select_servlet</servlet-name>
+        <servlet-class>com.olivier.bellemaison.DB.Controller.select_servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>select_servlet</servlet-name>
+        <url-pattern>/selectbyid</url-pattern>
+    </servlet-mapping>
+    
     <error-page>
         <error-code>404</error-code>
         <location>/error_404.html</location>

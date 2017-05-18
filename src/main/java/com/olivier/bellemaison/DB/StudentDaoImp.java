@@ -62,13 +62,13 @@ public class StudentDaoImp implements DAO {
 
 
 	public void insert(Student st) throws SQLException, Exception {
-		String insert_sql="insert into student (First_name,Last_name,Course_id) values(?,?,?,?) " ;
+		String insert_sql="insert into student (First_name,Last_name,Course_id,student_id) values(?,?,?,?) " ;
                try (PreparedStatement preparedStatement = (PreparedStatement) InitConnect.Connect(DBname).prepareStatement(insert_sql)) {
                    preparedStatement.setString(1,st.getFirst_name());
                    preparedStatement.setString(2, st.getLast_name());
                    preparedStatement.setString(3, st.getCourse_id());
                    preparedStatement.setInt(4, st.getStudent_id());
-                   System.out.println("insert the values to student table : "+preparedStatement.toString());
+                   log.info("insert the values to student table : "+preparedStatement.toString());
                    preparedStatement.executeUpdate();
                    log.trace("Insert student table successful !");
                }

@@ -103,10 +103,11 @@ public class TestServlet extends HttpServlet {
                 log.info("4.8,  created the table!!");
             }
 
-            
+            log.info("5,build new student instance  ..... " );
             sts.setCourse_id(course);
+            sts.setStudent_id(studentid);
             studentdi.insert(sts);
-            
+             log.info("6,insert record successful ..... " );
             
             // get by ID
             Student aa = new Student();
@@ -142,11 +143,11 @@ public class TestServlet extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
         log.info("send message to html .. ");
-        out.println("<html><body>");
+     /*   out.println("<html><body>");
         out.println("<label>FirstName:</label> :" + firstname + "<br>" + "<label>LastName:</label> :" + lastname);
         out.println("<br>" + "<label>Course_id : </label>" + course + "<br>");
         out.println("<br>" + "<label>globalcount: </label>" + globalCount + "<br>");
-        out.println("</body></html>");
+        out.println("</body></html>"); */ 
 
         String url = "index.html";
         

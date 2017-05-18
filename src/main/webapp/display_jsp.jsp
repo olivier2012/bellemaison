@@ -1,10 +1,7 @@
-<%-- 
-    Document   : display_jsp
-    Created on : May 16, 2017, 6:25:22 PM
-    Author     : user
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="com.olivier.bellemaison.DB.Student" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,6 +9,13 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World! $(user.firstName)</h1>
+        <h1>Hello World!</h1
+        <% 
+         String student= (String) request.getAttribute("student");
+         if(student !=null){
+         %>
+         <p><i><%= student %> </i></p>
+         
+         <% } %>
     </body>
 </html>
