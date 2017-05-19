@@ -14,6 +14,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.util.ArrayList;
 import java.util.Iterator;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -110,8 +111,8 @@ public class TestServlet extends HttpServlet {
              log.info("6,insert record successful ..... " );
             
             // get by ID
-            Student aa = new Student();
-            aa = studentdi.selectByID("01");
+            ArrayList<Student> aa = new ArrayList();
+            aa = studentdi.selectByID(studentid);
             request.setAttribute("send_01", aa);
             String url="/display_jsp.jsp";
             getServletContext().getRequestDispatcher(url).forward(request,response);

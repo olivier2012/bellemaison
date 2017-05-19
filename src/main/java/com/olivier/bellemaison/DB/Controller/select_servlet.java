@@ -10,6 +10,8 @@ import com.olivier.bellemaison.DB.StudentDaoImp;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -23,7 +25,9 @@ import org.apache.logging.log4j.LogManager;
  * @author olivier-h
  */
 public class select_servlet extends HttpServlet {
-     org.apache.logging.log4j.Logger log =  LogManager.getLogger(select_servlet.class.getName());
+
+    org.apache.logging.log4j.Logger log = LogManager.getLogger(select_servlet.class.getName());
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -41,7 +45,7 @@ public class select_servlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet selectbyid</title>");            
+            out.println("<title>Servlet selectbyid</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet selectbyid at " + request.getContextPath() + "</h1>");
@@ -62,22 +66,34 @@ public class select_servlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
         int studentid = Integer.parseInt(request.getParameter("studentid"));
         log.info("in the doGet method ...........");
-        Student st = new Student();
-        StudentDaoImp stdi = new StudentDaoImp();
+        ArrayList <Student> st = (ArrayList <Student>) new ArrayList();
+        String DB = "student";
+        StudentDaoImp stdi = new StudentDaoImp(DB);
+        String str_exa = "example";
         try {
-            st= stdi.selectByID(Integer.toString(studentid));
-            request.setAttribute("student", st);
-            String url="display_jsp.jsp";
-            getServletContext().getRequestDispatcher(url).forward(request,response); 
+            st = stdi.selectByID(studentid);
+            log.info("servlet side , transfer the request to  jsp  file " + st.size()+"  records");
+            for(Student s:st){
+                log.info(s.getStudent_id()+ " " + s.getFirst_name()+ " " + s.getLast_name()+ " "+ s.getCourse_id());
+            }
+            if (st.isEmpty()) {
+                log.info("selectById get the null return  , check  ....  ");
+                st.add(new Student(100,str_exa,str_exa,str_exa));
+            }
+            request.setAttribute("student1", st);
+
+            String url = "/display_jsp.jsp";
+ 
+
+            request.getRequestDispatcher(url).forward(request, response);
+            //   getServletContext().getRequestDispatcher(url).forward(request,response); 
         } catch (SQLException ex) {
             Logger.getLogger(select_servlet.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
-        
-        
+
     }
 
     /**
@@ -91,7 +107,7 @@ public class select_servlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        doGet(request,response);
+        doGet(request, response);
     }
 
     /**

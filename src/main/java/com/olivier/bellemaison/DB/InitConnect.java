@@ -21,8 +21,7 @@ public class InitConnect{
    public static Connection Connect() throws Exception {
 	Class.forName("com.mysql.jdbc.Driver");
 	String url ="jdbc:mysql://localhost?useSSL=false";
-	log.info("connecting Mysql DB.........! ");
-        System.out.println("connecting Mysql DB.........! ");
+	log.info("connecting Mysql DB.........! without database name ");
 	   Connection conn= DriverManager.getConnection(url,"jdbc","jdbc");
     log.info("connected Mysql DB! ");
 
@@ -33,8 +32,7 @@ public class InitConnect{
 		Class.forName("com.mysql.jdbc.Driver");
 		String url ="jdbc:mysql://localhost/"+DBname+"?useSSL=false";
 		log.trace("url :"+url);
-		log.info("connecting Mysql DB.........! ");
-                System.out.println("connecting Mysql DB ! ");
+		log.info("connecting Mysql DB with databasename.........! "+ DBname);
 		   Connection conn= DriverManager.getConnection(url,"jdbc","jdbc");
 	    log.info("connected Mysql DB! ");
 

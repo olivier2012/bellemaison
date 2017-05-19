@@ -2,6 +2,8 @@
 package com.olivier.bellemaison.DB;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Collection;
 
 /**
  *
@@ -12,6 +14,6 @@ public interface DAO {
 	 public void insert(Student s) throws SQLException, Exception;
          public void deleteByID(String ID) throws SQLException, Exception;
          public void select() throws SQLException;
-         public Student selectByID(String ID) throws SQLException;
+         public ArrayList selectByID(int ID) throws SQLException;
 	 public void update(String ID); 
 }
