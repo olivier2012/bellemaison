@@ -14,7 +14,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -25,9 +24,9 @@ import org.apache.logging.log4j.LogManager;
  *
  * @author olivier-h
  */
-public class select_servlet extends HttpServlet {
+public class select_servlet1 extends HttpServlet {
 
-    org.apache.logging.log4j.Logger log = LogManager.getLogger(select_servlet.class.getName());
+    org.apache.logging.log4j.Logger log = LogManager.getLogger(select_servlet1.class.getName());
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -69,33 +68,28 @@ public class select_servlet extends HttpServlet {
             throws ServletException, IOException {
 
         int studentid = Integer.parseInt(request.getParameter("studentid"));
-        log.info("in the doGet method ...........");
-        ArrayList <Student> st = (ArrayList <Student>) new ArrayList();
+        log.info("in the select_servlet1 doGet method ...........");
+        String st = null;
         String DB = "student";
         StudentDaoImp stdi = new StudentDaoImp(DB);
         String str_exa = "example";
         try {
-            st = stdi.selectByID(studentid);
-            log.info("servlet side , transfer the request to  jsp  file " + st.size()+"  records");
-            for(Student s:st){
-                log.info(s.getStudent_id()+ " " + s.getFirst_name()+ " " + s.getLast_name()+ " "+ s.getCourse_id());
-            }
-            if (st.isEmpty()) {
-                log.info("selectById get the null return  , check  ....  ");
-                st.add(new Student(100,str_exa,str_exa,str_exa));
-            }
-            request.setAttribute("student1", st);
+            st = stdi.select();
+            log.info(" select_servlet1 servlet side , transfer the request to  jsp  file " + st.length()+"  records");
 
-            String url = "/display_jsp.jsp";
+            if (st.isEmpty()) {
+                log.info(" select_servlet1 selectById get the null return  , check  ....  ");
+                st="new Student(100,str_exa,str_exa,str_exa";
+            }
+            request.setAttribute("student2", st);
+
+            String url = "/display_jsp_1.jsp";
  
 
-           // request.getRequestDispatcher(url).forward(request, response);
-            RequestDispatcher dispatcher; 
-            dispatcher = getServletContext().getRequestDispatcher(url);
-            dispatcher.forward(request,response);
-            
+            request.getRequestDispatcher(url).forward(request, response);
+            //   getServletContext().getRequestDispatcher(url).forward(request,response); 
         } catch (SQLException ex) {
-            Logger.getLogger(select_servlet.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(select_servlet1.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }

@@ -23,11 +23,20 @@
         <url-pattern>/selectbyid</url-pattern>
     </servlet-mapping>
     
+        <servlet>
+        <servlet-name>select_servlet1</servlet-name>
+        <servlet-class>com.olivier.bellemaison.DB.Controller.select_servlet1</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>select_servlet1</servlet-name>
+        <url-pattern>/select</url-pattern>
+    </servlet-mapping>
+    
     <error-page>
         <error-code>404</error-code>
         <location>/error_404.html</location>
     </error-page>
     <welcome-file-list>
-        <welcome-file>index.html</welcome-file>
+        <welcome-file>/index.html</welcome-file>
     </welcome-file-list>
 </web-app>

@@ -13,7 +13,7 @@ public interface DAO {
          public void create() throws SQLException, Exception;
 	 public void insert(Student s) throws SQLException, Exception;
          public void deleteByID(String ID) throws SQLException, Exception;
-         public void select() throws SQLException;
+         public String select() throws SQLException;
          public ArrayList selectByID(int ID) throws SQLException;
 	 public void update(String ID); 
 }

@@ -13,6 +13,9 @@ import java.util.List;
 import java.util.logging.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import prepare_jsp.Format;
+import static prepare_jsp.Format.formatResult_student;
+
 
 public class StudentDaoImp implements DAO {
 
@@ -61,6 +64,7 @@ public class StudentDaoImp implements DAO {
             log.info("Create student table successful !");
             System.out.println("Create student table successful !");
         }
+        con.close();
     }
 
     public void insert(Student st) throws SQLException, Exception {
@@ -86,43 +90,58 @@ public class StudentDaoImp implements DAO {
 
     }
 
-    public void select() throws SQLException {
-        String select_sql = "select * from  student ";
-        Statement statement = null;
+    public String select() throws SQLException {
+         Connection CurConn = null;
         try {
-            statement = (Statement) InitConnect.Connect(DBname).createStatement();
+            CurConn = (Connection) IsConnect.isconnect();
+        } catch (Throwable ex) {
+            java.util.logging.Logger.getLogger(StudentDaoImp.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Student s_temp = null;
+        if(con==null){
+           con=CurConn;
+        }
+        
+        String select_sql = "select student_id,First_name,Last_name,Course_id from  student ";
+        Statement statement = null;
+        ResultSet rs = null;
+        try {
+            statement = (Statement)con.createStatement();
+            rs = statement.executeQuery(select_sql);
         } catch (Exception e) {
             // TODO Auto-generated catch block
 
         }
-        log.trace(statement.toString());
-        ResultSet rs = statement.executeQuery(select_sql);
+        log.info(statement.toString());
+       
+       
+        /*
         ResultSetMetaData rsmd = (ResultSetMetaData) rs.getMetaData();
-        /* note :  meta data access from 1  ........... not from 0 */
+        // note :  meta data access from 1  ........... not from 0 
         log.trace("select  student table successful !");
         log.trace("-1-  rs value  " + "is afterlast  : " + rs.isAfterLast() + "rs cursor position " + rs.isFirst());
         List<String> cname = new ArrayList<>();
         for (int i = 1, y = 0; i <= rsmd.getColumnCount(); i++, y++) {
-            log.trace(i + "rsmd  column count : " + rsmd.getColumnCount() + "  is afterlast  : " + rs.isLast() + "rs cursor position " + rs.isFirst());
-            cname.add(rsmd.getColumnName(i));
-            int size = rsmd.getColumnDisplaySize(i);
-            int typecode = rsmd.getColumnType(i);
-            System.out.println("   ");
-            System.out.print("column name " + cname.indexOf(y) + "  size  " + size + " type " + typecode + "\n\r");
-            System.out.println(" " + rsmd.getColumnName(i));
+        log.trace(i + "rsmd  column count : " + rsmd.getColumnCount() + "  is afterlast  : " + rs.isLast() + "rs cursor position " + rs.isFirst());
+        cname.add(rsmd.getColumnName(i));
+        int size = rsmd.getColumnDisplaySize(i);
+        int typecode = rsmd.getColumnType(i);
+        System.out.println("   ");
+        System.out.print("column name " + cname.indexOf(y) + "  size  " + size + " type " + typecode + "\n\r");
+        System.out.println(" " + rsmd.getColumnName(i));
         }
         log.trace("-2-  rs value  " + "  is afterlast  : " + rs.isAfterLast() + " rs cursor position " + rs.isFirst());
         Iterator iterator = cname.iterator();
         while (iterator.hasNext()) {
-            System.out.print("     " + iterator.next());
+        System.out.print("     " + iterator.next());
         }
-
         System.out.println(" ");
         while (rs.next()) {
-            System.out.print("          " + rs.getString(1) + "        " + rs.getString(2) + "          " + rs.getInt(3) + "\r\n");
-        }
-
+        System.out.print("          " + rs.getString(1) + "        " + rs.getString(2) + "          " + rs.getInt(3) + "\r\n");
+        } */
         statement.close();
+        CurConn.close();
+        return formatResult_student(rs);
     }
 //
 
@@ -164,6 +183,7 @@ public class StudentDaoImp implements DAO {
            if (CurConn!= null){CurConn.close();}
         }
         log.info("return student instance ... "+ ar_st_temp.size()+" records in the temp ");
+        CurConn.close();
         return ar_st_temp;
     }
     
