@@ -7,13 +7,13 @@
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" >
 
-<!-- Optional theme -->
-         <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css" >
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css" >
 
-<!-- Latest compiled and minified JavaScript -->
+        <!-- Latest compiled and minified JavaScript -->
         <script src="jquery/jquery-3.2.1.min.js" ></script>
         <script src="bootstrap/js/bootstrap.min.js" ></script>
-    <!--    <link rel="stylesheet" href="./css/main.css">  -->
+        <!--    <link rel="stylesheet" href="./css/main.css">  -->
 
     </head>
     <body>
@@ -25,27 +25,31 @@
                         <a href="#bottom-tag"> Go to Bottom </a>  -->
             </blockquote>  
             <!-- /*参考了 http://inscriptionsaquadome.ca/en/*/ --> 
-            <div class="wrapper super" >   
-                <div id="side_menu" hidden>
-                    <a href="/">
-                        <img  src="" alt="side menu" title="side menu">
-                    </a>  
-                </div> 
-                <nav id="main_menu">
-                    <ul >  
-                        <li ><a  href="./index.html" >HOME  </a></li>
-                        <li ><a href="./infosclients.html" >infosclient</a></li>
-                        <li ><a href="./typeofpropertie.html">Propertie </a></li>
-                        <li><a href="./loancalucate.html">LoanCalucate</a></li>		  
-                    </ul>
-                </nav> 
-            </div> 
+            <div class = "container">  
+                <div class = "jumbotron"> 
+                    <div class="wrapper super" >   
+                        <div id="side_menu" hidden>
+                            <a href="/">
+                                <img  src="" alt="side menu" title="side menu">
+                            </a>  
+                        </div> 
+                        <nav id="main_menu">
+                            <ul >  
+                                <li ><a  href="./index.html" >HOME  </a></li>
+                                <li ><a href="./infosclients.html" >infosclient</a></li>
+                                <li ><a href="./typeofpropertie.html">Propertie </a></li>
+                                <li><a href="./loancalucate.html">LoanCalucate</a></li>		  
+                            </ul>
+                        </nav> 
+                    </div>
+                </div>
+            </div>  
             <br>
             <br>  <br>  <br>  <br>
- <h1 id="company"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Belle Masion</h1><br>
-          <p id="company1" style="font-size:1.5em;color:darkred ">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-              &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   Chose your home   </p>
+            <h1 id="company"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Belle Masion</h1><br>
+            <p id="company1" style="font-size:1.5em;color:darkred ">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   Chose your home   </p>
             <blockquote>
                 <a href="#top-tag"> Back to Top </a> 
                 <a href="#bottom-tag"> Go to Bottom </a> 
@@ -55,30 +59,32 @@
             <div class="container" >
                 <a href="#" class="navbar-brand">Home</a>
 
-                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-               <div class="collapse navbar-collapse navHeaderCollapse" >
+                <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="collapse navbar-collapse navHeaderCollapse" >
                     <ul class = "nav navbar-nav navbar-right">
                         <li><a href="#">Home  </a></li>
                         <li><a href="#">Client </a></li>
                         <li class="dropdown">
                             <a href="#"  class="dropdown-toggle" data-toggle = "dropdown">Properties</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#" >House</a></li>
-                            <li><a href="#" >Duplax</a></li>
-                            <li><a href="#" >Appartment</a></li>
-                        </ul></li>
+                            <ul class="dropdown-menu">
+                                <li><a href="#" >House</a></li>
+                                <li><a href="#" >Duplax</a></li>
+                                <li><a href="#" >Appartment</a></li>
+                            </ul></li>
                         <li><a href="#">LoanTools </a></li>
                     </ul>    
                 </div>
             </div>
         </div>
-        <div id="middle">  
+        
+        <div id="middle" class="container">  
+            <div class="row">
             <a name="middle-tag" /> 
-            <aside id="side_left"><h1>Sidebar left</h1>
+            <aside id="side_left" class="col-md-3"><h1>Sidebar left</h1>
                 <ul id="screen">
                     <li><span id="screen.w"></span></li>
                     <li><span id="screen.h"></span></li>
@@ -102,7 +108,7 @@
                 </svg>
             </aside>
 
-            <section id="page_center"><h1>Section center </h1>
+            <section id="page_center"  class="col-md-6"><h1>Section center </h1>
                 <h1><a href="./About.jsp">About</a></h1>
                 <p><a href="./index_1.html">Select By ID</a> </p>
                 <p><a href="./display_jsp_1.jsp">Select All of records</a> </p>
@@ -173,7 +179,7 @@
 
             </section>
 
-            <aside id="side_right"><h1>Sidebar right</h1>
+            <aside id="side_right"  class="col-md-3"><h1>Sidebar right</h1>
                 <ul id="windows">
                     <li><span id="window.open">window open</span></li>
                     <li><span id="window.close"></span></li>
@@ -187,6 +193,7 @@
                 </ol>
             </aside> 
         </div>   
+   </div>         
         <div class ="navbar navbar-default vavbar-fixed-bottom">
         <footer id="footer"><h1>Footer </h1>
             <blockquote>
@@ -205,8 +212,6 @@
             </div>
                 
         </footer>
-        </div>
-
     </body>
     <script src="./js/index.js"></script>
 </html>
