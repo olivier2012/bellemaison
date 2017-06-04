@@ -25,7 +25,7 @@
                         <a href="#bottom-tag"> Go to Bottom </a>  -->
             </blockquote>  
             <!-- /*参考了 http://inscriptionsaquadome.ca/en/*/ --> 
-            <div class = "container">  
+     <!--       <div class = "container">  
                 <div class = "jumbotron"> 
                     <div class="wrapper super" >   
                         <div id="side_menu" hidden>
@@ -43,13 +43,25 @@
                         </nav> 
                     </div>
                 </div>
-            </div>  
-            <br>
-            <br>  <br>  <br>  <br>
-            <h1 id="company"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Belle Masion</h1><br>
-            <p id="company1" style="font-size:1.5em;color:darkred ">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   Chose your home   </p>
+            </div>  -->
+             <div class="container" >
+                <div class = "row">
+                  <div class = "col-lg-12">
+                    <div class = "panel panel-default">
+                        <div class="panel-header">
+                         <img class="featureImg" src="./res/header.jpg" width = "100%">
+                           <h1 id="company">         Belle Masion </h1>
+                        </div>
+                        <div class="panel-body">
+                              <small> Chose your home  </small>
+                        </div>
+                  
+                                 
+                      </div>
+                    </div> 
+                 </div>    
+             </div>  
+            
             <blockquote>
                 <a href="#top-tag"> Back to Top </a> 
                 <a href="#bottom-tag"> Go to Bottom </a> 
@@ -86,6 +98,12 @@
             <div class="row">
             <a name="middle-tag" /> 
             <aside id="side_left" class="col-md-3"><h1>Sidebar left</h1>
+                <div class = "list-group">
+                    <a href ="#" class = "list-group-item" >
+                      <h4 class="first-group-item-heading">first len</h4>
+                        <p class="list-group-item-text">I'm looking for position of a Java developer !!</p>
+                    </a>
+                </div>
                 <ul id="screen">
                     <li><span id="screen.w"></span></li>
                     <li><span id="screen.h"></span></li>
@@ -216,13 +234,30 @@
             <div class="modal fade" id="contact" role="dialog">
                 <div class="modal-dialog">
                     <div class="modal-content">
+                        <form class ="form-horizontal">
+                        
+                        
                         <div class="modal-header">
                             <p>Contact Us</p>
                             
                         </div>
                         <div class="modal-body">
                             Test
+                            <div class="form-groun">
+                               <label for = "contact-name" class ="col-lg-2 control-label">Name:</label>
+                                <div class="col-lg-10">
+                                  <input type="text" class = "form-control" id="contact-name" placeholder ="Full Name">
+                                  <input type="email" class = "form-control" id="contact-email" placeholder ="youemail@example.com">
+                                    <textarea class="form-control" rows="8">Messages</textarea>
+                                </div>
+                            </div>
+
                         </div>
+                           <div class = "modal-footer">
+                              <a class ="btn btn-default" data-dismiss = "modal">Close</a>
+                              <button class ="btn btn-primary" type="submit">Send</a>
+                            </div> 
+                       </form>            
                     </div>
                      
                 </div>
