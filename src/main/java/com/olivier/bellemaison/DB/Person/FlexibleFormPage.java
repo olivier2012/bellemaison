@@ -10,9 +10,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 
 public class FlexibleFormPage extends HttpServlet  {
+    final static Logger log = (Logger) LogManager.getLogger(FlexibleFormPage.class.getName());
     private String connectionURL ;   //field for storage of  DB  connection string
     
     public void init( )   {          //this method is used for one-time activities , it's called when servlet is initialized 
@@ -41,7 +44,7 @@ public class FlexibleFormPage extends HttpServlet  {
         
         PrintWriter pw = resp.getWriter();
         try{
-        pw.println("<form action='"+req.getContextPath()+"/selectGrades' method='get'>"); 
+        pw.println("<form action='"+req.getContextPath()+"/selectPersons' method='get'>"); 
         pw.println("<table border='1' width='70%' >");
         pw.println("<h3> Selection parameters  :  </h3>");
         pw.println("<tr><th>First name </th><th>Last name </th><th>MotherlastName</th></tr>");
