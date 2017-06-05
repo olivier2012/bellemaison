@@ -44,7 +44,9 @@ public class FlexibleFormPage extends HttpServlet  {
         
         PrintWriter pw = resp.getWriter();
         try{
-        pw.println("<form action='"+req.getContextPath()+"/selectPersons' method='get'>"); 
+        pw.println("<form action='"+req.getContextPath()+"/selectPersons' method='post'>");
+        /* if the post method , next get parameter name or values , how to do  ? 
+        pw.println("<form action='"+req.getContextPath()+"/selectPersons' method='post'>"); */
         pw.println("<table border='1' width='70%' >");
         pw.println("<h3> Selection parameters  :  </h3>");
         pw.println("<tr><th>First name </th><th>Last name </th><th>MotherlastName</th></tr>");
