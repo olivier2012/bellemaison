@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <context-param>
+        <param-name>connect_string</param-name>
+        <param-value>jdbc:mysql://localhost:3306/bellemaison</param-value>
+    </context-param>
     <session-config>
         <session-timeout>
             30
@@ -13,7 +17,6 @@
         <servlet-name>TestServlet</servlet-name>
         <url-pattern>/ppp</url-pattern>
     </servlet-mapping>
-    
     <servlet>
         <servlet-name>select_servlet</servlet-name>
         <servlet-class>com.olivier.bellemaison.DB.Controller.select_servlet</servlet-class>
@@ -22,8 +25,7 @@
         <servlet-name>select_servlet</servlet-name>
         <url-pattern>/selectbyid</url-pattern>
     </servlet-mapping>
-    
-        <servlet>
+    <servlet>
         <servlet-name>select_servlet1</servlet-name>
         <servlet-class>com.olivier.bellemaison.DB.Controller.select_servlet1</servlet-class>
     </servlet>
@@ -31,7 +33,6 @@
         <servlet-name>select_servlet1</servlet-name>
         <url-pattern>/select</url-pattern>
     </servlet-mapping>
-    
     <error-page>
         <error-code>404</error-code>
         <location>/error_404.html</location>
@@ -39,4 +40,20 @@
     <welcome-file-list>
         <welcome-file>/index.html</welcome-file>
     </welcome-file-list>
+    <servlet>
+        <servlet-name>FlexibleFormPage</servlet-name>
+        <servlet-class>com.olivier.bellemaison.DB.Person.FlexibleFormPage</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FlexibleFormPage</servlet-name>
+        <url-pattern>/flexForm</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>SelectPersonPage</servlet-name>
+        <servlet-class>com.olivier.bellemaison.DB.Person.SelectPersonPage</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SelectPersonPage</servlet-name>
+        <url-pattern>/selectPersons</url-pattern>
+    </servlet-mapping>
 </web-app>
