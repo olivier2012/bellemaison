@@ -84,7 +84,7 @@ private void filterParameters(Map hm ,PrintWriter pw){
 private void readFromDBPerson(String connectionURL, int firPar, int secPar,PrintWriter pw) {
         try 
         (
-             Connection con = DriverManager.getConnection(connectionURL,"root","x09seokw");
+            Connection con = DriverManager.getConnection(connectionURL,"bellemaison","goodlucky");
             Statement stmt = con.createStatement();
         )
         { 
@@ -110,7 +110,7 @@ private void readFromDBPerson(String connectionURL, int firPar, int secPar,Print
 private void readFromDBPerson(String connectionURL, int firPar, int secPar,String fnameVal,String lnameVal,String acourse, PrintWriter pw) {
         try 
         (
-             Connection con = DriverManager.getConnection(connectionURL,"root","x09seokw");
+            Connection con = DriverManager.getConnection(connectionURL,"bellemaison","goodlucky");
             Statement stmt = con.createStatement();
         )
         { 

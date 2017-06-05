@@ -88,7 +88,7 @@ public class FlexibleFormPage extends HttpServlet  {
     private void readFromDBLname(String connectionURL, PrintWriter pw) {
         try 
         (
-            Connection con = DriverManager.getConnection(connectionURL,"root","x09seokw");
+            Connection con = DriverManager.getConnection(connectionURL,"bellemaison","goodlucky");
             Statement stmt = con.createStatement();
         )
         {  ResultSet rs =  stmt.executeQuery("SELECT  DISTINCT lastname FROM person ");
@@ -104,7 +104,7 @@ public class FlexibleFormPage extends HttpServlet  {
     private void readFromDBFname(String connectionURL, PrintWriter pw) {
         try 
         (
-             Connection con = DriverManager.getConnection(connectionURL,"root","x09seokw");
+             Connection con = DriverManager.getConnection(connectionURL,"bellemaison","goodlucky");
             Statement stmt = con.createStatement();
         )
         {  ResultSet rs =  stmt.executeQuery("SELECT  DISTINCT firstname FROM person ");
@@ -120,7 +120,7 @@ public class FlexibleFormPage extends HttpServlet  {
         private void readFromDBCourse(String connectionURL, PrintWriter pw) {
         try 
         (
-             Connection con = DriverManager.getConnection(connectionURL,"root","x09seokw");
+            Connection con = DriverManager.getConnection(connectionURL,"bellemaison","goodlucky");
             Statement stmt = con.createStatement();
         )
         {  ResultSet rs =  stmt.executeQuery("SELECT  DISTINCT motherlastname FROM person ");

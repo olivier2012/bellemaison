@@ -7,6 +7,10 @@
  * Author:  olivier-h
  * Created: Jun 4, 2017
  */
+create database bellemaison;
+create user 'bellemaison'@'%' identified by 'goodlucky';
+grant create,drop,delete,insert,select,update,grant option on bellemaison.* to 'bellemaison'@'%';
+flush privileges;
 drop table person;
 create table person (
   person_id int primary key auto_increment,
