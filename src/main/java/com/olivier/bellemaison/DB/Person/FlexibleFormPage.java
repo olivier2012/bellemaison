@@ -6,6 +6,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -41,10 +43,12 @@ public class FlexibleFormPage extends HttpServlet  {
         fnameVal =  returnEmptyIfNull(fnameVal);
         lnameVal =  returnEmptyIfNull(lnameVal);
         acourse =  returnEmptyIfNull(acourse);
-        
         PrintWriter pw = resp.getWriter();
+        /*add the html header to resp , pay attention to the add position */
+        RequestDispatcher rd =req.getRequestDispatcher("/index_header.html");
+        rd.include(req,resp);
         try{
-        pw.println("<form action='"+req.getContextPath()+"/selectPersons' method='post'>");
+        pw.println("<form action='"+req.getContextPath()+ "/selectPersons' method='post'>");
         /* if the post method , next get parameter name or values , how to do  ? 
         pw.println("<form action='"+req.getContextPath()+"/selectPersons' method='post'>"); */
         pw.println("<table border='1' width='70%' >");
@@ -75,14 +79,20 @@ public class FlexibleFormPage extends HttpServlet  {
         pw.println("<li>ServletPath=<b style='color:blue'>" + req.getServletPath() + "</b></li>");
         pw.println("<li>PathInfo=<b style='color:orange'>" + req.getPathInfo() + "</b></li>");
         pw.println("<li>QueryString=<b style='color:green'>" + req.getQueryString() + "</b></li>");
-
+        pw.println("<li>ServletContext=<b style='color:green'>" + req.getServletContext().getServletRegistration("SelectPersonPage") + "</b></li>");
+        
         }
          catch(Exception e){
-         pw.println("<body>");
+        /*add the html header to resp , pay attention to the add position */
+        rd =req.getRequestDispatcher("/index_header.html");
+        rd.include(req,resp);
          pw.print("<p><i>An error during calculations <i></p>");
-    
+        rd =req.getRequestDispatcher("/index_footer.html");
+        rd.include(req,resp);
     } finally{
-            pw.println("</body>"); 
+        /*add the html header to resp , pay attention to the add position */
+        rd =req.getRequestDispatcher("/index_footer.html");
+        rd.include(req,resp);
         }
         
     }

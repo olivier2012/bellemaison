@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name = "viewport" content="width=device-width , initial-scale=1.0">
+        <meta http-equiv="content-type" charset="utf-8" >
+        <title>BelleMaison --- by Olivier Su </title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" >
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css" >
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="jquery/jquery-3.2.1.min.js" ></script>
+        <script src="bootstrap/js/bootstrap.min.js" ></script>
+        <!--    <link rel="stylesheet" href="./css/main.css">  -->
+
+    </head>
+    <body>
+        <header>
+
+            <blockquote class="blackquote_top">
+                <!--        <a name="top-tag" />
+                        <a href="#middle-tag"> Go to Middle </a> 
+                        <a href="#bottom-tag"> Go to Bottom </a>  -->
+            </blockquote>  
+            <!-- /*参考了 http://inscriptionsaquadome.ca/en/*/ --> 
+     <!--       <div class = "container">  
+                <div class = "jumbotron"> 
+                    <div class="wrapper super" >   
+                        <div id="side_menu" hidden>
+                            <a href="/">
+                                <img  src="" alt="side menu" title="side menu">
+                            </a>  
+                        </div> 
+                        <nav id="main_menu">
+                            <ul >  
+                                <li ><a  href="./index.html" >HOME  </a></li>
+                                <li ><a href="./infosclients.html" >infosclient</a></li>
+                                <li ><a href="./typeofpropertie.html">Propertie </a></li>
+                                <li><a href="./loancalucate.html">LoanCalucate</a></li>		  
+                            </ul>
+                        </nav> 
+                    </div>
+                </div>
+            </div>  -->
+             <div class="container" >
+                <div class = "row">
+                  <div class = "col-lg-12">
+                    <div class = "panel panel-default">
+                        <div class="panel-header">
+                         <img class="featureImg" src="./res/header.jpg" width = "100%">
+                           <h1 id="company">         Belle Masion </h1>
+                        </div>
+                        <div class="panel-body">
+                              <small> Chose your home  </small>
+                        </div>
+                  
+                                 
+                      </div>
+                    </div> 
+                 </div>    
+             </div>  
+            
+            <blockquote>
+                <a href="#top-tag"> Back to Top </a> 
+                <a href="#bottom-tag"> Go to Bottom </a> 
+            </blockquote>
+        </header>
+        <div class ="navbar navbar-inverse " navbar-static-top>
+            <div class="container" >
+                <a href="#" class="navbar-brand">Home</a>
+
+                <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="collapse navbar-collapse navHeaderCollapse" >
+                    <ul class = "nav navbar-nav navbar-right">
+                        <li><a href="#">Home  </a></li>
+                        <li><a href="#">Client </a></li>
+                        <li class="dropdown">
+                            <a href="#"  class="dropdown-toggle" data-toggle = "dropdown">Properties</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#" >House</a></li>
+                                <li><a href="#" >Duplax</a></li>
+                                <li><a href="#" >Appartment</a></li>
+                            </ul></li>
+                        <li><a href="#">LoanTools </a></li>
+                        <li><a href="#contact" data-toggle="modal" >Contact</a></li>
+                    </ul>    
+                </div>
+            </div>
+        </div>
+        
+        <div id="middle" class="container">  
+            <div class="row">
+            <a name="middle-tag" /> 
+            <aside id="side_left" class="col-md-3"><h1>Sidebar left</h1>
+                <div class = "list-group">
+                    <a href ="#" class = "list-group-item" >
+                      <h4 class="first-group-item-heading">first len</h4>
+                        <p class="list-group-item-text">I'm looking for position of a Java developer !!</p>
+                    </a>
+                </div>
+                <ul id="screen">
+                    <li><span id="screen.w"></span></li>
+                    <li><span id="screen.h"></span></li>
+                    <li><span id="screen.aw"></span></li>
+                    <li><span id="screen.ah"></span></li>
+                    <li><span id="screen.cd"></span></li>
+                    <li><span id="screen.pd"></span></li>
+
+                </ul>
+                <script>
+                    var today = new Date();
+                    document.writeln(today);
+                </script>
+                <br/>
+                <span> <br/></span>
+                <hr>
+                <svg  style='border:1px solid' width="90" height="60">
+                <rect x="0" y="0" width="30" height="60" fill="blue"/> 
+                <rect x="30" y="0" width="30" height="60" fill="white"/> 
+                <rect x="60" y="0" width="30" height="60" fill="red"/> 
+                </svg>
+            </aside>
